@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Platform, PermissionsAndroid, Alert } from 'react-native';
 import { WebView } from 'react-native-webview';
+import RNRestart from 'react-native-restart';
 
 export default class MyWeb extends Component {
   constructor() {
@@ -37,16 +38,9 @@ export default class MyWeb extends Component {
         Alert.alert(
           'Permissão da câmera negada!',
           'Hove um erro na permissão da câmera, por favor reinicie o app.',
-          [
-            {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
-            {
-              text: 'Cancel',
-              onPress: () => console.log('Cancel Pressed'),
-              style: 'cancel',
-            },
-            {text: 'OK', onPress: () => console.log('OK Pressed')},
-          ],
-          {cancelable: false},
+          // [
+          //   // {text: 'OK', onPress: RNRestart.Restart()},
+          // ],
         );
         console.warn(err);
       }
@@ -62,7 +56,7 @@ render() {
     // {this.showWebView && (
     <WebView
       source={{
-        uri: 'https://gruhn.github.io/vue-qrcode-reader/demos/DecodeAll.html',
+        uri: 'https://pt-br.facebook.com/',
       }}
       style={{ marginTop: 20 }}
     />
